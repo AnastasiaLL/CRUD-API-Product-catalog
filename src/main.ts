@@ -5,13 +5,16 @@ import { registerProductRoutes } from './routes/products.js';
 
 dotenv.config();
 
-const PORT = parseInt(process.env.PORT || '8000', 10);
+const PORT = parseInt(process.env.PORT || '4000', 10);
 
 export async function createApp(): Promise<FastifyInstance> {
   const app: FastifyInstance = Fastify({
     logger: false,
   });
 
+  await app.register(cors, {
+    origin: true,
+  });
 
   await registerProductRoutes(app);
 
