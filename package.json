@@ -9,7 +9,7 @@
     "start:prod": "npm run build && node dist/main.js",
     "build": "tsc",
     "start:multi": "node dist/cluster.js",
-    "test": "tsx ./node_modules/.bin/jest",
+    "test": "jest --config jest.config.cjs",
     "lint": "eslint src --ext .ts",
     "format": "prettier --write \"src/**/*.ts\""
   },
